@@ -8,7 +8,7 @@ parameters:
 api_platform:
     collection:
           pagination:
-              items_per_page: 30
+              items_per_page: 10
               enabled: true
     mapping:
         paths: ['%kernel.project_dir%/src/Entity']

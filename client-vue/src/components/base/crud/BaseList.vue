@@ -73,8 +73,10 @@
             },
             fieldDefaults: {
                 type: Object,
-                default: {
-                    sortable: true
+                default() {
+                    return {
+                        sortable: true
+                    }
                 }
             }
         },
@@ -110,7 +112,7 @@
                 return this.getResourceUCFirst() + 'Update';
             },
             getCreateRouteName() {
-                return this.getResourceUCFirst() + 'Update';
+                return this.getResourceUCFirst() + 'Create';
             },
             getFieldsList() {
                 let fieldArr = []

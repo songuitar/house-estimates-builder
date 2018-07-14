@@ -18,7 +18,6 @@ class Element
     /**
      * @var int The entity Id
      *
-     * @Groups({Plank::GROUP_COLLECTION_GET, Plank::GROUP_ITEM_GET})
      *
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -27,7 +26,6 @@ class Element
     private $id;
 
     /**
-     * @Groups({Plank::GROUP_COLLECTION_GET, Plank::GROUP_ITEM_GET})
      *
      * @var string
      * @Assert\NotBlank

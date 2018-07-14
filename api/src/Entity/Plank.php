@@ -17,12 +17,14 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     collectionOperations={
  *          "get"={
  *                "normalization_context"={"groups"={Plank::GROUP_COLLECTION_GET}}
- *           }
+ *           },
+ *          "post"
  *     },
  *     itemOperations={
  *          "get"={
  *                "normalization_context"={"groups"={Plank::GROUP_ITEM_GET}}
- *           }
+ *           },
+ *          "put", "delete"
  *     }
  * )
  * @ORM\Entity
@@ -63,6 +65,7 @@ class Plank
      *
      * @ORM\ManyToOne(targetEntity="Element")
      * @ORM\JoinColumn(name="element_id", referencedColumnName="id", nullable=true)
+     *
      */
     private $element;
 
@@ -82,6 +85,9 @@ class Plank
      * @Groups({Plank::GROUP_COLLECTION_GET, Plank::GROUP_ITEM_GET})
      *
      * @ORM\Column(type="integer")
+     *
+     * @Assert\GreaterThan(value="0")
+     *
      */
     private $count = 0;
 
@@ -91,6 +97,7 @@ class Plank
      * @Groups({Plank::GROUP_COLLECTION_GET, Plank::GROUP_ITEM_GET})
      *
      * @ORM\Column(type="text", options={"default":""})
+     *
      * @Assert\NotBlank
      */
     private $description = '';

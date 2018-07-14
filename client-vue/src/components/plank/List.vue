@@ -11,9 +11,7 @@
             return {
                 fields: {
                     id: {},
-                    size: {
-                        sortable:true
-                    },
+                    size: {},
                     element: {},
                     woodType: {},
                     count: {},

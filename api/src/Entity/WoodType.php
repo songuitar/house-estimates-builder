@@ -17,7 +17,6 @@ class WoodType
     /**
      * @var int The entity Id
      *
-     * @Groups({Plank::GROUP_COLLECTION_GET, Plank::GROUP_ITEM_GET})
      *
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -28,14 +27,11 @@ class WoodType
     /**
      * @var string
      *
-     * @Groups({Plank::GROUP_COLLECTION_GET, Plank::GROUP_ITEM_GET})
-     *
      * @ORM\Column(type="string")
      */
     private $name;
 
     /**
-     * @Groups({Plank::GROUP_COLLECTION_GET, Plank::GROUP_ITEM_GET})
      *
      * @var float
      * @Assert\NotBlank
