@@ -1,0 +1,10 @@
+SELECT
+  sum(
+      plank.count *
+      (s.width::DOUBLE PRECISION / 1000) *
+      (s.length::DOUBLE PRECISION / 1000) *
+      (s.thickness::DOUBLE PRECISION / 1000)
+  ) * 9000 as volume
+FROM
+  plank
+  INNER JOIN plank_size s on plank.size_id = s.id
